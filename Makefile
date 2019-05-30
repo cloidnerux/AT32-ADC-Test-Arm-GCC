@@ -74,7 +74,8 @@ CPU = -mcpu=cortex-m4
 #from https://github.com/antoinealb/rust-demo-cortex-m4/blob/master/Makefile
 #FPU=-mfpu=fpv4-sp-d16 
 FPU=-mfpu=fpv4-sp-d16
-FLOAT-ABI=-mfloat-abi=softfp
+#FLOAT-ABI=-mfloat-abi=softfp
+FLOAT-ABI=-mfloat-abi=soft
 
 
 # mcu
@@ -176,6 +177,10 @@ flash-jlink:
 	
 unlock:
 	openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg -c init -c "reset halt" -c "stm32f1x unlock 0"
+
+#debug: 
+#	JLinkGDBServer -select USB -device AT32F403RCT6 -endian little -if SWD -speed 4000 -noir -LocalhostOnly
+#	gdb build/hover.elf
 
 #######################################
 # dependencies
