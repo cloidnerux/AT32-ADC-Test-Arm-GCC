@@ -120,7 +120,7 @@ CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)"
 # LDFLAGS
 #######################################
 # link script
-LDSCRIPT = STM32F103RCTx_FLASH.ld
+LDSCRIPT = AT32F403RCTx_FLASH.ld
 
 # libraries
 #Drivers/CMSIS/Lib/GCC
